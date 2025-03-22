@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-Catch Error Handling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #errorMessage {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
 
 <body>
-    <h2>JavaScript Error Handling</h2>
-    <p>This example demonstrates how to use <b>try...catch</b> to display an error.</p>
-    <button onclick="generateError()">Click to Trigger Error</button>
-    <p id="error_message" style="color: red;"></p>
+
+    <h2>JavaScript Try-Catch Error Handling</h2>
+    <p id="errorMessage"></p>
 
     <script>
-        function generateError() {
-            try {
-                // Intentional error: calling an undefined function
-                addalert("Welcome guest!");
-            } catch (err) {
-                document.getElementById("error_message").innerHTML = err.message;
-            }
+        try {
+            // Natural error: Using an undefined variable
+            let result = addalert + 10; // This will cause a ReferenceError
+
+        } catch (error) {
+            // Display the error on the page
+            console.error("An error occurred:", error.message);
+            document.getElementById("errorMessage").innerText = "Error: " + error.message;
         }
     </script>
+
 </body>
 
 </html>
